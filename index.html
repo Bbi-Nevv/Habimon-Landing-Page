@@ -9,7 +9,15 @@
 <script>
 tailwind.config={theme:{extend:{fontFamily:{sans:['Nunito','system-ui','sans-serif']},colors:{navy:'#0B5A8C',cream:'#FFF9F3',sand:'#F9F3EC',ink:'#1A1A1A',mute:'#6B6B6B'}}}}
 </script>
-<style>body{background:#FFF9F3;color:#1A1A1A;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<style>
+body{background:#FFF9F3;color:#1A1A1A;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.habimon-floating-download{position:fixed;right:max(24px,env(safe-area-inset-right,0px));bottom:max(24px,env(safe-area-inset-bottom,0px));z-index:50;display:inline-flex;align-items:center;gap:10px;border-radius:9999px;background:#0B5A8C;padding:15px 22px;color:#fff;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(11,90,140,.28);transition:background-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.habimon-floating-download:hover{background:#08466D;box-shadow:0 10px 28px rgba(11,90,140,.34);transform:translateY(-2px)}
+.habimon-floating-download:focus-visible{outline:3px solid #F4B942;outline-offset:4px}
+.habimon-floating-download svg{width:19px;height:19px;flex:none}
+@media(max-width:480px){.habimon-floating-download{right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));gap:8px;padding:13px 17px;font-size:14px}}
+@media(prefers-reduced-motion:reduce){.habimon-floating-download{transition:none}}
+</style>
 </head>
 <body class="font-sans">
 <div class="mx-auto max-w-[1440px] overflow-hidden">
@@ -118,5 +126,9 @@ tailwind.config={theme:{extend:{fontFamily:{sans:['Nunito','system-ui','sans-ser
   <p>© 2026 Habimon. All rights reserved.</p>
 </footer>
 </div>
+<a class="habimon-floating-download" href="https://bbi-nevv.itch.io/habimon" aria-label="Download Habimon">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+  <span>Download Habimon</span>
+</a>
 </body>
 </html>
